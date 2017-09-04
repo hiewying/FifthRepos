@@ -88,6 +88,12 @@ namespace BankingApp
             // Handle insufficient fund
                 if (((fromRadioButtonChecked == "ChequeRadioButtonOn") && (amountTransfer + 2.0m > fromBalance)) ||
                     ((fromRadioButtonChecked == "SavingRadioButtonOn") && (amountTransfer > fromBalance )))
+                {
+                    MessageBox.Show("Error! You have insufficient fund. Enter another amount");
+                    Keyboard.Focus(amountTextBox);
+                    amountTextBox.SelectAll();
+                }
+
                 if (((fromRadioButtonChecked == "InvestmentRadioButtonOn") && (amountTransfer + 30.0m > fromBalance)) || 
                 ((fromRadioButtonChecked == "SavingRadioButtonOn") && (amountTransfer > fromBalance)))
                 {
